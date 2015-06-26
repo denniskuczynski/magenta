@@ -17,7 +17,9 @@ public class MongoDbCloudProxyServlet extends ProxyServlet {
 
     @Override
     protected String rewriteTarget(final HttpServletRequest request) {
-        final String newURL = _baseUrl+request.getPathInfo();
+        final String newURL = _baseUrl + 
+                              request.getPathInfo() + "?" +
+                              request.getQueryString();
         return newURL;
     }
 }
