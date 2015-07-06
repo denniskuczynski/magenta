@@ -1,7 +1,8 @@
 package magenta;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class MongoDbCloudMessages {
     private static MongoDbCloudMessages _singleton;
@@ -26,17 +27,17 @@ public class MongoDbCloudMessages {
     public void addMessage(
         final String method,
         final int status,
-        final String url,
-        final String queryString,
+        final String pathInfo,
+        final Map<String, String[]> queryParams,
         final String requestBody,
         final String responseBody
     ) {
         for (final MongoDbCloudMessageListener listener : _listeners) {
-            listener.addMessage(
+            listener.onMongoDbCloudMessage(
                 method,
                 status,
-                url,
-                queryString,
+                pathInfo,
+                queryParams,
                 requestBody,
                 responseBody
             );

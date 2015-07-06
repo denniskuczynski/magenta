@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponseWrapper;
 import java.io.IOException;
 import java.io.ByteArrayOutputStream;
 
-public class MagentaResponseFilter implements Filter {
+public class MagentaWiretapFilter implements Filter {
     public FilterConfig _filterConfig;
     public MongoDbCloudMessages _messages;
 
@@ -62,8 +62,8 @@ public class MagentaResponseFilter implements Filter {
                     _messages.addMessage(
                         ((HttpServletRequest)request).getMethod(),
                         ((HttpServletResponse)response).getStatus(),
-                        ((HttpServletRequest)request).getRequestURL().toString(),
-                        ((HttpServletRequest)request).getQueryString(),
+                        ((HttpServletRequest)request).getPathInfo(),
+                        request.getParameterMap(),
                         is.getCopy(),
                         os.getCopy()
                     );
