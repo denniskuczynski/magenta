@@ -1,0 +1,33 @@
+html, body {
+	margin: 0;
+	font-family: 'Helvetica';
+}
+
+header {
+	background: #191919;
+	color: white;
+	padding: 8px;
+	font-size: 18px;
+	border-bottom: solid 4px #FF33CC;
+	margin-bottom: 10px;
+}
+
+main {
+	padding: 8px;
+}
+
+.agentRow {
+	border: 1px solid #8a8a8a;
+	padding: 4px;
+}
+
+.agentRow > span {
+	margin-right: 10px;
+}
+
+.agentRow > canvas {
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin-top: 10px;
+}

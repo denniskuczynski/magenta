@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 options: {
-                    transform: ['browserify-shim', 'babelify']
+                    transform: ['browserify-shim', 'hbsify', 'babelify']
                 }
             }
         },
